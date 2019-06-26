@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Page1</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+    <script src="https://cdn.ckeditor.com/4.11.4/standard/ckeditor.js"></script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"></script>
+
+
+    <style type="text/css">
+      body{
+        background-color: #990000;
+      }
+
+
+        #abc{
+          border-radius: 10px;
+          }
+
+        #butn:hover{
+          background-color: #990000;
+          box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+          color: #fff;
+          transform: translateY(-7px);
+        }
+
+        .jumbotron{
+          background-color: #d6d6c2;
+          margin-top:20px;
+          margin-bottom:20px;
+          margin-left:50px;
+          margin-right:50px;
+          border-radius:10px;
+          padding-top:20px;
+          padding-bottom:20px;
+        }
+
+
+        .textblock {
+
+              display: block;
+              display: -webkit-box;
+              max-width: 400px;
+              height: 400px;
+              margin: 0 auto;
+              font-size: 17spx;
+              line-height: 1.4;
+              -webkit-line-clamp: 3;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+              text-overflow: ellipsis;
+        }
+      </style>
+  </head>
+  <body>
+      <div class="jumbotron text-center">
+        <div class="container">
+          <h1>Page Header</h1>
+          <div class="row" id="abc">
+            <div class="wrap">
+              <button type="button" id="butn" role="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#articlemod" name="button">&nbsp Post Articles</button>
+            </div>&nbsp
+            <div class="wrap">
+              <button type="button" name="button"  class="btn btn-default btn-lg" data-toggle="modal" data-target="#eventmod" id="butn"> &nbsp Post Event</button>
+            </div>&nbsp
+            <div class="wrap">
+              <button type="button" class="btn btn-default btn-lg" id="butn" data-toggle="modal" data-target="#requestmod" name="button">&nbsp Post Request</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- modals -->
+      <!-- post article -->
+      <div class="modal fade" id="articlemod" role="dialog">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Post Articles</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+              <form class="form-group" action="/" method="post">
+                <label for="">Author name</label> &nbsp &nbsp
+                <input type="text" class="form-control" id="authname" name="authname" value=""><br>
+                <label for="">Genre</label>
+
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <label class="input-group-text" for="inputGroupSelect01">Genre</label>
+                  </div>
+                  <select class="custom-select" name="genre" id="inputGroupSelect01">
+                    <option selected>Arts</option>
+                    <option value="1">Science</option>
+                    <option value="2">Political</option>
+                    <option value="3">Regional</option>
+                    <option value="1">Social</option>
+                    <option value="2">Technology</option>
+                    <option value="3">International</option>
+                  </select>
+                </div>
+
+                <label for="">Content</label>
+                <textarea class="form-control" name="content" rows="8" cols="80"></textarea>
+                <button  id="postarticle" name="post" class="btn pull-right btn-info" data-dismiss="modal">Post</button>
+                </form>
+                <script type="text/javascript">
+                  CKEDITOR.replace( 'content' );
+                </script>
+            </div>
+            <div class="modal-footer">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- post event -->
+      <div class="modal fade" id="eventmod" role="dialog">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Post Event</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+              <form class="form-inline" action="index.html" method="post">
+                <label for="">Event name</label>&nbsp&nbsp
+                <input type="text" class="form-control" name="" value="">
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-info" data-dismiss="modal">Post</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- post request -->
+      <div class="modal fade" id="requestmod" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Post Request</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+              <form class="form-group" action="" method="post">
+                <label for="">Topic</label> &nbsp &nbsp
+                <input type="text" class="form-control" id="topic" name="" value="">
+                <label for="">Author</label> &nbsp
+                <input type="text" class="form-control" id="auth" name="" value="">
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-info" data-dismiss="modal" >Post</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <div class="jumbotron">
+      <h3>The recent articles</h3><br>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="card">
+            <div class="card-header">
+              <h4>War and Peace</h4>
+            </div>
+            <div class="card-body">
+              <div >
+                <p class="textblock">War and Peace is a novel by the Russian author Leo Tolstoy. It is regarded as a central work of world literature and one of Tolstoy's finest literary achievements.
+
+  The novel chronicles the history of the French invasion of Russia and the impact of the Napoleonic era on Tsarist society through the stories of five Russian aristocratic families. Portions of an earlier version, titled The Year 1805,[4] were serialized in The Russian Messenger from 1865 to 1867. The novel was first published in its entirety in 1869.[5]
+
+  Tolstoy said War and Peace is "not a novel, even less is it a poem, and still less a historical chronicle." Large sections, especially the later chapters, are a philosophical discussion rather than narrative.[6] Tolstoy also said that the best Russian literature does not conform to standards and hence hesitated to call War and Peace a novel. Instead, he regarded Anna Karenina as his first true novel. The Encyclopædia Britannica states: "It can be argued that no single English novel attains the universality of the Russian writer Leo Tolstoy's War and Peace".[7]</p>
+              </div>
+            </div>
+            <div class="card-footer">
+              <a href="#">To read more...</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card">
+            <div class="card-header">
+              <h4>Article 2</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card">
+            <div class="card-header">
+              <h4>Article 3</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card">
+            <div class="card-header">
+              <h4>Article 4</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br><br><br>
+      <div class="row">
+        <button type="button" class="btn btn-secondary btn-block btn-lg" >To check all the articles</button>
+      </div>
+    </div>
+
+    <div class="jumbotron">
+      <h3>Upcoming Events</h3><br><br>
+      <div class="well">
+        <a href="#"><h3>Met Gala on Monday</h3><br></a>
+      </div>
+      <div class="row">
+        <button type="button" class="btn btn-secondary btn-block btn-lg" name="button">To check all events</button>
+      </div>
+    </div>
+
+  </body>
+</html>
